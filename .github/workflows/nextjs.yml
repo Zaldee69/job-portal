@@ -23,7 +23,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -61,13 +61,3 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-
-  # Nginx restart job
-  restart-nginx:
-    needs: build
-    runs-on: self-hosted
-    steps:
-      - name: Restart Nginx
-        run: |
-          # Assuming Nginx binary path is /usr/bin/service
-          sudo /usr/bin/service nginx restart
