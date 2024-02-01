@@ -24,5 +24,5 @@ jobs:
           echo docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
           docker buildx create --use
           docker buildx inspect --bootstrap
-          docker buildx build --file ./Dockerfile --output type=image,push=true --tag "${DOCKER_USERNAME}/your-image-name:latest" .
+          docker buildx build --file ./Dockerfile --output type=image,push=true --tag "${DOCKER_USERNAME}/job-portal:latest" .
 
