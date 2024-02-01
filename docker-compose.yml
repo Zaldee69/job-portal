@@ -1,8 +1,11 @@
-version: "3"
+version: '3.7'
+
 services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  tilaka-portal:
+    image: job-portal:latest
     ports:
-      - "3000:3000"
+      - 3000:3000
+    restart: unless-stopped
+    container_name: tilaka-portal
+networks:
+  tilaka-portal:
