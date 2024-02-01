@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   job-portal:
-    image: job-portal:latest
+    image: voetaz123/job-portal:latest
     ports:
       - 3000:3000
     restart: unless-stopped
