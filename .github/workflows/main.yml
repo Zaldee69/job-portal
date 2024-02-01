@@ -42,6 +42,6 @@ jobs:
         key: ${{secrets.PRIVATE_KEY}}
         port: 22
         script: |
-          cd /app
+          cd /root/apps
           docker-compose pull
           docker-compose up -d
