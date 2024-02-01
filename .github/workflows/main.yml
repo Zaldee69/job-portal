@@ -23,9 +23,10 @@ jobs:
         password: Rizaldy123*
 
     - name: Build and Push Docker Image
-      run: |
-        docker-compose build
-        docker-compose push
+      uses: docker/build-push-action@v5
+      with:
+          push: true
+          tags: job-portal:latest
 
   # deploy:
   #   runs-on: ubuntu-latest
