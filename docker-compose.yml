@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  nextjs-app:
+    image: job-portal
+    restart: always
+    ports:
+      - "3000:3000"
