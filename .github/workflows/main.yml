@@ -47,5 +47,5 @@ jobs:
         port: 22
         working-directory: /root/apps
         script: |
-          docker-compose pull
+          docker-compose pull voetaz123/job-portal:latest
           docker-compose up -d
