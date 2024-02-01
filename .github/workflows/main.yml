@@ -42,8 +42,7 @@ jobs:
         username: ${{secrets.USER}}
         key: ${{secrets.PRIVATE_KEY}}
         port: 22
+        working-directory: /root/apps
         script: |
-          pwd
-          cd /root/apps
           docker-compose pull
           docker-compose up -d
