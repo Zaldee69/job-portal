@@ -31,7 +31,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 139.59.118.164
-        username: root
+        username: zaldee
         key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDO1BDH7hfx7kBp+JE0Xm1yt78xyn27DbjTsMA1ndBMRbhRxrp2cpKyx70IEs9BdVu6ZLfSz3g/oxi2EnpIJV49PkCdG/jdIbRX3TsS7Yfr0umPaENHGwm9UL7x+xB6CDh103QXUpHJx9RgdiQGTB0669Tim0oMcHQ8qObG19b3GxRDyy7b52k/7e1IcEAK/YLKjjqd+idydDgBD8y6m352kYHDMhr85OjnSLc/hsflR/ZvoyHDoGsWHuw/uACH2x966zMQ0IC2z2PsdRpUXBaHpLbulenSfgqboCDxLi48dVoY8jY1VF3UCcflzWZZDNk2PpbeWrMrRW9zio6vrmi4rKrpV0UCOVrE91avHnHS8o9yrpqZIn1WRmuATw37QriSlybkT+LL3SJ6YzfYMpFwqprlMW5tkhZQcxTw4h0x5AMZcwsmvmH0GmtlQNX3B7f8P0uidFtgGj3KuCQc3IIPO8MfXcCbgTXOBhPFFdTNFzNs9fVWYE7PVuahyrdw9M8=
         passphrase: Voetaz123*
         script: |
