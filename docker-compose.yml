@@ -1,11 +1,9 @@
 version: '3.7'
 
 services:
-  tilaka-portal:
+  job-portal:
     image: job-portal:latest
     ports:
       - 3000:3000
     restart: unless-stopped
-    container_name: tilaka-portal
-networks:
-  tilaka-portal:
+    container_name: job-portal
