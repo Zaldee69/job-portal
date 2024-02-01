@@ -16,14 +16,6 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Debugging
-        run: |
-            pwd
-            ls -la
-            cat ./Dockerfile
-            echo "DOCKER_USERNAME=${secrets.DOCKER_USERNAME}"
-            echo "DOCKER_PASSWORD=${secrets.DOCKER_PASSWORD}"
-
       - name: Build and Push Docker Image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
