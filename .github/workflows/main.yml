@@ -19,30 +19,29 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: voetaz123
-        password: Rizaldy123*
+        username: ${{secret.DOCKER_USERNAME}}
+        password: ${{secret.DOCKER_PASSWORD}}
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5
+      run: |
+        docker-compose build
+        docker-compose push
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: SSH into Server
+      uses: appleboy/ssh-action@master
       with:
-          push: true
-          tags: job-portal:latest
-
-  # deploy:
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #   - name: Checkout Repository
-  #     uses: actions/checkout@v2
-
-  #   - name: SSH into Server
-  #     uses: appleboy/ssh-action@master
-  #     with:
-  #       host: 139.59.118.164
-  #       username: root
-  #       key: ${{ secrets.SSH_PRIVATE_KEY }}
-  #       passphrase: Voetaz123*
-  #       script: |
-  #         cd /app
-  #         docker-compose pull
-  #         docker-compose up -d
+        host: ${{secret.HOST}}
+        username: ${{secret.USER}}
+        key: ${{secret.PRIVATE_KEY}}
+        port: 22
+        script: |
+          cd /app
+          docker-compose pull
+          docker-compose up -d

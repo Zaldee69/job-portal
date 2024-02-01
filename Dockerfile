@@ -3,7 +3,7 @@ FROM node:18-alpine
 # Uncomment if use of process.dlopen is necessary
 # apk add --no-cache libc6-compat
 
-WORKDIR /app
+WORKDIR /apps
 COPY package*.json .
 RUN yarn install
 COPY . .
