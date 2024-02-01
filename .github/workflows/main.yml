@@ -30,7 +30,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
+          echo docker login --username voetaz123 --password Rizaldy123*
           
           echo "Building and pushing Docker image..."
           docker buildx create --use
