@@ -38,9 +38,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Copy Docker Compose File to Server
-      run: scp -i ${{secrets.PRIVATE_KEY}} docker-compose.yml ${{secrets.USER}}@${{secrets.HOST}}:/root/apps/
-
     - name: SSH into Server and Deploy
       uses: appleboy/ssh-action@master
       with:
