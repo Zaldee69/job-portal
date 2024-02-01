@@ -23,9 +23,12 @@ jobs:
         password: ${{secrets.DOCKER_PASSWORD}}
 
     - name: Build and Push Docker Image
-      run: |
-        docker-compose build
-        docker-compose push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tag: voetaz123/job-portal:latest
+
 
   deploy:
     needs: build
