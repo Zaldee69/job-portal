@@ -19,8 +19,8 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
-        username: ${{secret.DOCKER_USERNAME}}
-        password: ${{secret.DOCKER_PASSWORD}}
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_PASSWORD}}
 
     - name: Build and Push Docker Image
       run: |
@@ -37,9 +37,9 @@ jobs:
     - name: SSH into Server
       uses: appleboy/ssh-action@master
       with:
-        host: ${{secret.HOST}}
-        username: ${{secret.USER}}
-        key: ${{secret.PRIVATE_KEY}}
+        host: ${{secrets.HOST}}
+        username: ${{secrets.USER}}
+        key: ${{secrets.PRIVATE_KEY}}
         port: 22
         script: |
           cd /app
