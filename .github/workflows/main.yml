@@ -38,7 +38,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: SSH into Server
+    - name: Copy Docker Compose File to Server
+      run: scp -i ${{secrets.PRIVATE_KEY}} docker-compose.yml ${{secrets.USER}}@${{secrets.HOST}}:/root/apps/
+
+    - name: SSH into Server and Deploy
       uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.HOST}}
@@ -47,5 +50,5 @@ jobs:
         port: 22
         working-directory: /root/apps
         script: |
-          docker-compose pull voetaz123/job-portal:latest
+          docker-compose pull
           docker-compose up -d
