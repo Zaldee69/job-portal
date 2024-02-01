@@ -31,7 +31,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 139.59.118.164
-        username: zaldee
+        username: root
         password: Voetaz123*
         script: |
           cd /app
