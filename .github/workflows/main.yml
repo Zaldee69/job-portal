@@ -22,7 +22,10 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
+          
+          echo "Building and pushing Docker image..."
           docker buildx create --use
           docker buildx inspect --bootstrap
           docker buildx build --file ./Dockerfile --output type=image,push=true --tag "${DOCKER_USERNAME}/job-portal:latest" .
+
 
