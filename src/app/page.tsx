@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import {
+  CITIES,
   COMPANY_LIST,
   JOB_CATEGORIES,
   JOB_LISTS,
@@ -52,6 +53,7 @@ export default function Home() {
               </Label>
               <div className="flex items-center justify-between">
                 <Select
+                  data={CITIES}
                   placeholder="City"
                   showTriggerIcon={false}
                   className="border-none p-0 "

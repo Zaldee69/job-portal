@@ -21,8 +21,8 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="container 2xl:px-14 shadow md:shadow-none">
-      <div className="flex items-center py-5 md:py-7 justify-between">
+    <nav className="z-10">
+      <div className="flex items-center py-5 md:py-7 justify-between container 2xl:px-14">
         <div className="flex gap-5 items-center">
           <h1 className="text-xl">Logo ni boss</h1>
           <div className="gap-1 items-center hidden md:flex">

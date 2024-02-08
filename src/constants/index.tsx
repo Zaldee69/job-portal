@@ -5,7 +5,7 @@ export const NAVBAR_ITEMS = [
   },
   {
     title: "Find Jobs",
-    href: "/find-jobs",
+    href: "/job-list",
   },
   {
     title: "Employers",
@@ -182,4 +182,27 @@ export const COMPANY_LIST = [
     location: "Depok",
     image: "/images/udemy.jpg",
   },
+];
+
+export const CITIES = [
+  { value: "jakarta", label: "Jakarta" },
+  { value: "bandung", label: "Bandung" },
+  { value: "surabaya", label: "Surabaya" },
+  { value: "denpasar", label: "Denpasar" },
+  { value: "makassar", label: "Makassar" },
+  { value: "samarinda", label: "Samarinda" },
+  { value: "malang", label: "Malang" },
+  { value: "bekasi", label: "Bekasi" },
+  { value: "bogor", label: "Bogor" },
+  { value: "yogyakarta", label: "Yogyakarta" },
+  { value: "banda aceh", label: "Banda Aceh" },
+  { value: "medan", label: "Medan" },
+  { value: "palembang", label: "Palembang" },
+  { value: "jambi", label: "Jambi" },
+  { value: "pekanbaru", label: "Pekanbaru" },
+  { value: "padang", label: "Padang" },
+  { value: "bengkulu", label: "Bengkulu" },
+  { value: "lampung", label: "Lampung" },
+  { value: "serang", label: "Serang" },
+  { value: "semarang", label: "Semarang" },
 ];

@@ -19,39 +19,25 @@ import {
 } from "@/components/ui/popover";
 import { ScrollArea } from "./scroll-area";
 
-const cities = [
-  { value: "jakarta", label: "Jakarta" },
-  { value: "bandung", label: "Bandung" },
-  { value: "surabaya", label: "Surabaya" },
-  { value: "denpasar", label: "Denpasar" },
-  { value: "makassar", label: "Makassar" },
-  { value: "samarinda", label: "Samarinda" },
-  { value: "malang", label: "Malang" },
-  { value: "bekasi", label: "Bekasi" },
-  { value: "bogor", label: "Bogor" },
-  { value: "yogyakarta", label: "Yogyakarta" },
-  { value: "banda aceh", label: "Banda Aceh" },
-  { value: "medan", label: "Medan" },
-  { value: "palembang", label: "Palembang" },
-  { value: "jambi", label: "Jambi" },
-  { value: "pekanbaru", label: "Pekanbaru" },
-  { value: "padang", label: "Padang" },
-  { value: "bengkulu", label: "Bengkulu" },
-  { value: "lampung", label: "Lampung" },
-  { value: "serang", label: "Serang" },
-  { value: "semarang", label: "Semarang" },
-];
-
 interface ISelect {
   showTriggerIcon?: boolean;
   placeholder?: string;
   className?: string;
+  popoverClassName?: string;
+  scrollAreaClassname?: string;
+  data: Array<{
+    value: string;
+    label: string;
+  }>;
 }
 
 export const Select: React.FC<ISelect> = ({
   showTriggerIcon = true,
   placeholder = "Select",
   className,
+  data,
+  scrollAreaClassname,
+  popoverClassName,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
@@ -73,7 +59,7 @@ export const Select: React.FC<ISelect> = ({
           )}
         >
           {value
-            ? cities.find((city) => city.value === value)?.label
+            ? data.find((city) => city.value === value)?.label
             : placeholder}
           <ChevronsUpDown
             className={cn("ml-2 h-4 w-4 shrink-0 opacity-50", {
@@ -82,13 +68,13 @@ export const Select: React.FC<ISelect> = ({
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className={cn("w-[200px] p-0", popoverClassName)}>
         <Command>
           <CommandInput placeholder="Search city..." />
           <CommandEmpty>No city found.</CommandEmpty>
           <CommandGroup>
-            <ScrollArea className="h-52">
-              {cities.map((city) => (
+            <ScrollArea className={cn("h-52", scrollAreaClassname)}>
+              {data.map((city) => (
                 <CommandItem
                   key={city.value}
                   value={city.value}
